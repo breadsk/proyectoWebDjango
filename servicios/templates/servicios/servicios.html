@@ -1,0 +1,31 @@
+{% extends "ProyectoWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for servicio in servicios %}
+    
+        <div class="container mt-4 mb-4">
+            <div class="row justify-content-center align-content-center">
+                <div class="card mt-2" style="width: 30rem;">
+                    <img src="{{servicio.imagen.url}}" class="card-img-top" alt="{{servicio.titulo}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{servicio.titulo}}</h5>
+                        <p class="card-text">{{servicio.contenido}}</p>          
+                    </div>
+                </div>
+            </div>
+        </div>    
+    
+    <!-- <div style="text-align:center;">
+        <p>
+            <h2 style="color:white;">{{servicio.titulo}}</h2>
+            <p style="color:white;">{{servicio.contenido}}</p>
+            <p><img src="{{servicio.imagen.url}}" alt="{{servicio.titulo}}" width="50%" height="50%"></p>
+        </p>
+    </div> -->
+
+    {% endfor %}
+
+{% endblock %}
