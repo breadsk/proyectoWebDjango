@@ -1,5 +1,10 @@
 from django.shortcuts import render , redirect
+from django.http import HttpResponse
+from django.conf import settings
+
 from .forms import FormularioContacto
+
+from django.core.mail import send_mail
 #from blog.models import Contacto
 
 # Create your views here.
@@ -8,22 +13,23 @@ def contacto(request):
     formulario_contacto=FormularioContacto()
     
     if request.method == "POST":
-        #Cargar en nuestro formulario la información la info 
-        #que el usuario ha ido introduciendo
         formulario_contacto=FormularioContacto(data=request.POST)
         if formulario_contacto.is_valid():
             nombre=request.POST.get("nombre")
             email=request.POST.get("email")
             contenido=request.POST.get("contenido")
+                                    
+            recipient_list = ['nicolas.programador@gmail.com', 'nicolas.programador@gmail.com']
             
-            inf_form=miFormulario.cleaned_data
+            print(nombre)
+            print(contenido)
+            print(email)
+            print(recipient_list)
+            send_mail(nombre,contenido,email,recipient_list)
             
-            send_mail(inf_form['asunto'], inf_form['mensaje'],
-            inf_form.get('email','nicolas.programador@gmail.com'),
-            ['nicolas.programador@gmail.com'])
             
             return redirect("/contacto/?valido")
     
     return render(request,"contacto/contacto.html",{
-        "miFormulario":formulario_contacto
+        "miFormulario":formulario_contacto,
     })
