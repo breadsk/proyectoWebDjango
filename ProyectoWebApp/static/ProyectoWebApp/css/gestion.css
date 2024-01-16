@@ -287,3 +287,29 @@ ul.errorlist{
   color: cadetblue;
   transition: .3s ease-in-out;
 }
+
+.contenedorFormulario{
+  background-color: rgba(24,64,8);
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px 0px;
+  border-radius: .6rem;
+}
+.btnEnviarContacto{
+  background-color: rgb(194, 210, 196);
+  color: black;
+  padding: 5px 25px;
+  margin: 0 auto;
+  border-radius: .3rem;
+  font-weight: 800;
+}
+.btnEnviarContacto:hover{
+  cursor: pointer;
+  background-color: rgb(10, 154, 106);
+  transition: .3s ease-in-out;
+  color: white;
+}
+.p-formulario-valido{
+  color: white;
+  text-align: center;
+}
