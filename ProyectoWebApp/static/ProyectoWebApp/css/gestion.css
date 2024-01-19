@@ -334,7 +334,7 @@ ul.errorlist{
   background-color: rgb(145, 172, 195);
   max-width: 60%;
   width: 900px;
-  height: 500px;
+  height: 600px;
   margin: auto;
   border-radius: .5rem;
   position: relative;
@@ -342,7 +342,7 @@ ul.errorlist{
   margin-bottom: 30px;
   overflow: hidden;
 }
-.producto h3{
+.producto h3{  
   text-align: center;
   text-transform: uppercase;
   background-color: #ffffff;
@@ -381,3 +381,24 @@ ul.errorlist{
   padding: 4px;
   border-radius: .3rem;
 }
+
+.btn-agregar{
+  background-color: darkgoldenrod;
+  color: white;
+  position: absolute;
+  top: 90%;
+  left: 10%;
+  margin-top: 10px;
+  padding: 5px 40px 5px 40px;
+  text-decoration: none;
+  transition: .3s ease-in-out;
+  border-radius: .3rem;
+}
+.btn-agregar:hover:hover{
+  cursor: pointer;
+  background-color: rgb(105, 75, 0);
+  color: white;
+  transition: .3s ease-in-out;
+  font-weight: 900;
+}
+

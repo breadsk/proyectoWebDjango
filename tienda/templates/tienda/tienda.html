@@ -4,18 +4,18 @@
 
 {% block content %}
 
-    <h1 class="titulo-tienda">Productos</h1>
-
-    {% for producto in productos %}
-
-        <div class="producto">
-            <h3>{{producto.nombre}}</h3>
-            <img src="{{producto.imagen.url}}" class="" alt="{{producto.titulo}}">
-            <p class="p-precio">Precio: {{producto.precio}}</p>
-            <p class="p-disp">Disponible: {{producto.disponibilidad|yesno:"Disponible,No disponible" }}</p>
-            <p class="p-categoria">Categoria :&nbsp;&nbsp;<span class="s-categoria">{{producto.categorias}}</span> </p>
-        </div>        
-
-    {% endfor %}
-
+    <h1 class="titulo-tienda">Productos</h1>    
+        <div style="float:right;">
+            <p style="color:white;">Carro</p>
+        </div>
+        {% for producto in productos %}
+            <div class="producto">
+                <h3>{{producto.nombre}}</h3>
+                <img src="{{producto.imagen.url}}" class="" alt="{{producto.titulo}}">
+                <p class="p-precio">Precio: {{producto.precio}}</p>
+                <p class="p-disp">Disponible: {{producto.disponibilidad|yesno:"Disponible,No disponible" }}</p>
+                <p class="p-categoria">Categoria :&nbsp;&nbsp;<span class="s-categoria">{{producto.categorias}}</span> </p>
+                <a href="#" class="btn-agregar">Agregar</a>
+            </div>
+        {% endfor %}    
 {% endblock %}
