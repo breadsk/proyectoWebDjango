@@ -313,3 +313,71 @@ ul.errorlist{
   color: white;
   text-align: center;
 }
+
+/** Tienda **/
+
+.titulo-tienda{
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: .3s ease-in-out;
+  text-transform: uppercase;
+}
+.titulo-tienda:hover{
+  color: rgb(145, 172, 195);
+  transition: .3s ease-in-out;  
+}
+
+
+.producto{
+  background-color: rgb(145, 172, 195);
+  max-width: 60%;
+  width: 900px;
+  height: 500px;
+  margin: auto;
+  border-radius: .5rem;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.producto h3{
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  margin: 5px;
+  border-radius: .3rem;
+  font-weight: 800;
+}
+.producto img{  
+  position: absolute;
+  max-width: 80%;
+  max-height: 60%;
+  margin: 10px 0 10px 0;
+  border-radius: .3rem;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);  
+}
+.p-precio{
+  position: absolute;
+  top: 75%;
+  left: 10%;
+}
+.p-disp{
+  position: absolute;
+  top: 80%;
+  left: 10%;
+}
+.p-categoria{
+  position: absolute;
+  top: 85%;
+  left: 10%;
+}
+.s-categoria{
+  background-color: red;
+  color: white;
+  padding: 4px;
+  border-radius: .3rem;
+}
