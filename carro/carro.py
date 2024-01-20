@@ -6,9 +6,8 @@ class Carro:
         carro=self.session.get("carro")#Construir carro de la compra para esta sesion
         #Carro va a ser un diccionario
         if not carro:
-            carro=self.session["carro"]={}
-        else:
-            self.carro=carro
+            carro=self.session["carro"]={}        
+        self.carro=carro
             
     def agregar(self,producto):
         if(str(producto.id) not in self.carro.keys()):
@@ -17,17 +16,13 @@ class Carro:
                 "nombre":producto.nombre,
                 "precio":str(producto.precio),
                 "cantidad":1,
-                "imagen":producto.imagen
+                "imagen":producto.imagen.url
             }
-        else:
-            #En el caso de que si este en el carro
-            #Recorrer todas las claves valor que tenemos en el dict
-            #comprobar sila clave corresponde a la del producto que estamos
-            #Agregando y si asi es, la cantidad que definimos la
-            #Incrementamos en 1
+        else:           
             for key, value in self.carro.items():
                 if key==str(producto.id):
                     value["cantidad"]= value["cantidad"]+1
+                    value["precio"]=float(value["precio"])+producto.precio
                     break#Ya no recorras mas
         self.guardar_carro()
     
@@ -46,6 +41,7 @@ class Carro:
         for key, value in self.carro.items():
             if key==str(producto.id):
                 value["cantidad"]=value["cantidad"]-1
+                value["precio"]=float(value["precio"])-producto.precio
                 if value["cantidad"]<1:
                    self.eliminar(producto) 
                 break

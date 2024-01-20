@@ -4,18 +4,32 @@
 
 {% block content %}
 
-    <h1 class="titulo-tienda">Productos</h1>    
-        <div style="float:right;">
-            <p style="color:white;">Carro</p>
-        </div>
+    <!--<div style="float:right;">-->    
+    <!--<h1 class="titulo-tienda">Productos</h1>-->
+<div class="container">
+    <div style="float:right;" class="mt-2">
+        {% include "carro/widget.html" %}
+    </div><!-- Fin div carro de compra-->
+    <div class="row">        
         {% for producto in productos %}
-            <div class="producto">
-                <h3>{{producto.nombre}}</h3>
-                <img src="{{producto.imagen.url}}" class="" alt="{{producto.titulo}}">
-                <p class="p-precio">Precio: {{producto.precio}}</p>
-                <p class="p-disp">Disponible: {{producto.disponibilidad|yesno:"Disponible,No disponible" }}</p>
-                <p class="p-categoria">Categoria :&nbsp;&nbsp;<span class="s-categoria">{{producto.categorias}}</span> </p>
-                <a href="#" class="btn-agregar">Agregar</a>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-2 mb-2 d-block justify-content-center">
+            <div class="card divCard">
+                <div class="divImagen">
+                    <img src="{{producto.imagen.url}}" alt="{{producto.nombre}}" style="width:50%;height:50%;">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{producto.nombre}}</h5>
+                  <p class="card-text">{{producto.precio}}</p>
+                  <p>Disponible: {{producto.disponibilidad|yesno:"Disponible,No disponible" }}</p>
+                  <p><span class="badge-danger p-1 rounded">{{producto.categorias}}</span></p>
+                </div>                
+                <div class="card-body d-flex justify-content-center">
+                  <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-danger pl-5 pr-5 text-center m-auto">Agregar</a>
+                </div>
             </div>
-        {% endfor %}    
+        </div>
+        {% endfor %}
+    </div>
+</div>
+        
 {% endblock %}

@@ -333,7 +333,7 @@ ul.errorlist{
 .producto{
   background-color: rgb(145, 172, 195);
   max-width: 60%;
-  width: 900px;
+  width: 300px;
   height: 600px;
   margin: auto;
   border-radius: .5rem;
@@ -402,3 +402,16 @@ ul.errorlist{
   font-weight: 900;
 }
 
+.divImagen{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+}
+.divImagen img{
+  margin-top: 20px;
+}
+.divCard{
+  background-color: rgb(33, 31, 31);
+  color: white;
+}
