@@ -9,5 +9,6 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contacto/', include('contacto.urls')),
     path('carro/', include('carro.urls')),
+    path('autenticacion/', include('autenticacion.urls')),
     path('' , include('ProyectoWebApp.urls')),
 ] 
