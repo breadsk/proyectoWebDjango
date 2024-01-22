@@ -1,12 +1,12 @@
 class Carro:        
     def __init__(self,request):
         #Almacenar la peticion actual para usarla mas adelante
-        '''self.request=request
+        self.request=request
         self.session=request.session
         carro=self.session.get("carro")#Construir carro de la compra para esta sesion
         #Carro va a ser un diccionario
         if not carro:
-            carro=self.session["carro"]={}'''
+            carro=self.session["carro"]={}
         self.carro=carro
             
     def agregar(self,producto):
