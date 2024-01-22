@@ -5,7 +5,7 @@
     {% load static %}
 
     <!-- Bootstrap -->
-    <link href="{% static 'ProyectoWebApp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'ProyectoWebApp/vendor/bootstrap/css/bootstrapp.min.css' %}" rel="stylesheet">
 
     <!-- Fonts -->
     
@@ -17,7 +17,19 @@
 </head>
 
 <body>  
-  <h1 style="color:white;text-align:center;margin-top:20px;margin-bottom:20px;">GESTIÓN DE PEDIDOS</h1>
+  <h1 style="color:white;text-align:center;margin-top:20px;margin-bottom:20px;">
+    GESTIÓN DE PEDIDOS
+  </h1>
+  <div style="text-align:right;margin-right:100px;color: white;">
+    
+    {% if user.is_authenticated %}
+      Hola {{user.username}} &nbsp;&nbsp; <a href="{% url 'close_session' %}" style="color:white;">Cerrar sesión</a>
+    {% else %}
+      <a href="{% url 'logear' %}" style="color:white;">Login</a> &nbsp;&nbsp; <a href="{% url 'Autenticacion' %}" style="color:white;">Registrate</a>
+    {% endif %}
+
+  </div>
+  
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
