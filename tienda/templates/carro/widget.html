@@ -47,5 +47,12 @@
                 Total: $ {{importe_total_carro}}
             </td>
         </tr>
+        {% if request.session.carro.items %}
+            <tr class="m-auto">
+                <td>
+                    <a href="../pedidos" class="btn btn-success pl-5 pr-5 text-center">Pagar</button>                        
+                </td>
+            </tr>
+        {% endif %}
     </tfoot>
 </table>
