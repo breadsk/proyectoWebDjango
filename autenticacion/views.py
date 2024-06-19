@@ -13,7 +13,8 @@ class VRegistro(View):
     def get(self,request):#Lo que renderiza el formulario
         
         form = UserCreationForm()
-        return render(request,"registro/registro.html",{"form":form})
+        context = {"form":form}
+        return render(request,"registro/registro.html",context)
         
     #El post es el que gestiona el envio de informacion a traves del formulario
     def post(self,request): #envia los datos a la bd
