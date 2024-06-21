@@ -12,6 +12,7 @@ En settings
 """
 
 from pathlib import Path
+
 from decouple import config
 from django.contrib.messages import constants as mensaje_de_error
 
