@@ -12,7 +12,7 @@ En settings
 """
 
 from pathlib import Path
-# from decouple import config
+from decouple import config
 from django.contrib.messages import constants as mensaje_de_error
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%#g0cbp=tex0-9zi44ktho1%)@#km$=8ex-j%9r398^9=93k_w'#config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = "True"#config('DEBUG')
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -141,12 +141,13 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND=""#config('EMAIL_BACKEND')
-EMAIL_HOST=""#config('EMAIL_HOST', default='localhost')
-EMAIL_USE_TLS=""#config('EMAIL_USE_TLS',default=False, cast=bool)
-EMAIL_PORT=""#config('EMAIL_PORT', default=25, cast=int)
-EMAIL_HOST_USER=""#config('EMAIL_HOST_USER',default='')
-EMAIL_HOST_PASSWORD=""#config('EMAIL_HOST_PASSWORD')
+EMAIL_BACKEND= config('EMAIL_BACKEND')
+print(EMAIL_BACKEND)
+EMAIL_HOST=config('EMAIL_HOST', default='localhost')
+EMAIL_USE_TLS=config('EMAIL_USE_TLS',default=False, cast=bool)
+EMAIL_PORT= config('EMAIL_PORT', default=25, cast=int)
+EMAIL_HOST_USER=config('EMAIL_HOST_USER',default='')
+EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_ALLOWED_TEMPLATE_PACK = 'bootstrap4'
